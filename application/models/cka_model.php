@@ -9,6 +9,11 @@ class cka_model extends CI_Model {
 		
 		return $result->result_array();
 	}
+	public function getDataObj($tableName) {
+		$result = $this->db->get($tableName);
+		
+		return $result->result();
+	}
 	public function findData($tableName,$pkName,$pkMatch,$pkValue) {
 		//$this->load->database();
 		

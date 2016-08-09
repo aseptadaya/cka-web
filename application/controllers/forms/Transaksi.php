@@ -23,10 +23,55 @@ class Transaksi extends CI_Controller {
 		$this->load->view('forms/transaksi');
 	}
 	public function processPenjualan(){
+    	$cabang = $this->cka_model->findData('cabang','id_cabang','cabang',$_POST['cabang_karyawan']);
+    	$karyawan = substr($_POST['karyawan'], 0 ,strpos($_POST['karyawan'], " - "));
+		$res = $this->cka_model->insertData('penjualan', array(
+		 	"id_karyawan" => $karyawan,
+		 	"id_cabang" => $cabang[0]['id_cabang'],
+		 	"demo" => $_POST['demo'],
+		 	"tunai_unit" => $_POST['tunai_unit'],
+		 	"angsuran_unit" => $_POST['angsuran_unit'],
+		 	"tunai_rupiah" => $_POST['tunai_rupiah'],
+		 	"angsuran_rupiah" => $_POST['angsuran_rupiah'],
+		 	"date" => $_POST['date'],
+		 	"date_input" => date("Y-m-d h:i:sa")
+		 	));
+	 	 if($res >= 1){
+		  	redirect ('forms/transaksi');}
+		 else $this->load->view('main');;
 
+		 	 // echo "<pre>";
+		 	 // print_r($cabang);
+		 	 // echo "</pre>";
+		 	 // echo "<pre>";
+		 	 // print_r($_POST);
+		 	 // echo "</pre>";
 	}
 	public function processTagihan(){
-		
+		$cabang = $this->cka_model->findData('cabang','id_cabang','cabang',$_POST['cabang_karyawan']);
+    	$karyawan = substr($_POST['karyawan'], 0 ,strpos($_POST['karyawan'], " - "));
+    	$res = $this->cka_model->insertData('tagihan', array(
+			"id_karyawan" => $karyawan,
+		 	"id_cabang" => $cabang[0]['id_cabang'],
+		 	"tanggal_transaksi" => $_POST['tanggal_transaksi'],
+		 	"total_kuitansi_bawa" => $_POST['total_kuitansi_bawa'],
+		 	"tanggal_setor" => $_POST['tanggal_setor'],
+		 	"kuitansi_jadi_uang" => $_POST['kuitansi_jadi_uang'],
+		 	"nominal_tagihan_rupiah" => $_POST['nominal_tagihan_rupiah'],
+		 	"bbm" => $_POST['bbm'],
+		 	"date_input" => date("Y-m-d h:i:sa")
+		 	)
+		);
+	 	if($res >= 1){
+		 	redirect ('forms/transaksi');}
+		else $this->load->view('main');;
+
+		 	  // echo "<pre>";
+		 	 // print_r($cabang);
+		 	 // echo "</pre>";
+		 	 // echo "<pre>";
+		 	 // print_r($_POST);
+		 	 // echo "</pre>";
 	}
 
 }

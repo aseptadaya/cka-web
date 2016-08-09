@@ -31,7 +31,8 @@ class Databaru extends CI_Controller {
 				"tim_karyawan" => $_POST['tim_karyawan'],
 				"alamat_karyawan" => $_POST['alamat_karyawan'],
 				"telepon_karyawan" => $_POST['telepon_karyawan'],
-				"divisi" => $_POST['divisi']
+				"divisi" => $_POST['divisi'],
+				"sub_tim" => $_POST['sub_tim']
 				)
 		);
 		if($res >= 1){

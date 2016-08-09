@@ -91,7 +91,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label>Nama Karyawan</label>
-                  <input name="nama_karyawan" type="text" class="form-control" id="inputName" placeholder="Nama Lengkap Karyawan">
+                  <input name="nama_karyawan" type="text" class="form-control" id="inputName" placeholder="Nama Lengkap Karyawan" required data-validation-required-message="Mohon masukan nama cabang">
                 </div>
                 <div class="form-group">
                   <label>Cabang Karyawan</label>
@@ -115,10 +115,8 @@
                 </div>
                 <div class="form-group">
                 <div class="row">
-                  <div class="col-lg-6">
-                  <label>
-                    Tim Karyawan
-                  </label>
+                  <div class="col-lg-4">
+                  <label>Tim Karyawan</label>
                   <div class="input-group">
                     <!-- <div class="checkbox"> -->
                       <span>
@@ -142,7 +140,14 @@
                   <!-- /input-group -->
                   </div>
                   <!-- /.col-lg-6 -->
-                  <div class="col-lg-6">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label>Sub Tim</label>
+                        <input name="sub_tim" type="text" class="form-control" id="inputName" placeholder="Pilih Sub Tim" >
+                    </div>
+
+                  </div>
+                  <div class="col-lg-4">
                   <label>Divisi</label>
                     <div class="radio">
                       <label>
@@ -156,10 +161,11 @@
                         Tagihan
                       </label>
                     </div>
-                    <!-- /input-group -->
+                    <!-- /input-group -->  
                   </div>
                   <!-- /.col-lg-6 -->
-              </div>
+                </div>
+
               <!-- /.row -->
               </div>
 

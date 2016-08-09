@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TableTransaksi extends CI_Controller {
+class Penjualan extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +20,11 @@ class TableTransaksi extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('tables/tabletransaksi');
+		$penjualan = $this->cka_model->getDataObj('penjualan');
+		$data['list_penjualan'] = $penjualan;
+		// echo "<pre>";
+		// print_r ($data);
+		// echo "</pre>";
+		$this->load->view('tables/penjualan2',$data);
 	}
 }
