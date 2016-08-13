@@ -23,19 +23,24 @@ class Login extends CI_Controller {
 		if($this->ion_auth->logged_in()){
 			redirect ('main');
 		}
-		else $this->load->view('admin/login');
+		else 
+			$this->load->view('admin/login');
 	}
 	public function process() {
 		// echo "<pre>";
 		// print_r ($_POST); 
 		// echo "</pre>"; 
-		$succeed = $this->ion_auth->login($_POST['username'], $_POST['password'], TRUE);
+		$identity = $this->input->post('email');
+		$password = $this->input->post('password');
+		
+		$succeed = $this->ion_auth->login($identity, $password);
 		
 		if ($succeed) {
 			redirect('main');
 		} else {
 			redirect('admin/login');
 		}
+	
 	}
 
 }

@@ -6,6 +6,10 @@
 <script src="<?php echo base_url();?>plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>dist/js/app.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="<?php echo base_url();?>dist/js/pages/dashboard2.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url();?>dist/js/demo.js"></script>
 <!-- Sparkline -->
 <script src="<?php echo base_url();?>plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- iCheck -->
@@ -17,7 +21,3 @@
 <script src="<?php echo base_url();?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="<?php echo base_url();?>plugins/chartjs/Chart.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url();?>dist/js/demo.js"></script>

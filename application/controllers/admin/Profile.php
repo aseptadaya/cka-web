@@ -20,6 +20,9 @@ class Profile extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('admin/profile');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('admin/profile');	
+		}
+		else redirect('admin/login');
 	}
 }

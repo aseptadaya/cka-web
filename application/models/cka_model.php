@@ -14,17 +14,18 @@ class cka_model extends CI_Model {
 		
 		return $result->result();
 	}
-	public function findData($tableName,$pkName,$pkMatch,$pkValue) {
+	public function findData($tableName,$lookingFor,$key,$basedOnValue) {
 		//$this->load->database();
 		
 		// SELECT * FROM $tableName
-		$this->db->select($pkName); 
+		$this->db->select($lookingFor); 
     	$this->db->from($tableName);   
-    	$this->db->where($pkMatch, $pkValue);
+    	$this->db->where($key, $basedOnValue);
 		$result = $this->db->get();
 		
 		return $result->result_array();
 	}
+	// public function get_where()
 	public function insertData($tableName,$data) {
 		//$this->load->database();
 		

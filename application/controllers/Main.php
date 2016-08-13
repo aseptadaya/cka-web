@@ -20,6 +20,9 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('main');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('main');	
+		}
+		else redirect('admin/login');
 	}
 }

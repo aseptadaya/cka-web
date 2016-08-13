@@ -6,7 +6,11 @@
           <img src="<?php echo base_url();?>dist/img/logo cka.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Aditya Septadaya</p>
+          <?php
+          $user=$this->ion_auth->user()->row()->username;
+          echo "<p><strong>".$user."</p></strong>";
+          ?>
+          
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -70,8 +74,8 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url()."index.php/charts/charttransaksi";?>"><i class="fa fa-circle-o"></i> ChartJS</a></li>
             <li><a href="<?php echo base_url()."index.php/charts/charttransaksi";?>"><i class="fa fa-circle-o"></i> Flot</a></li>
-          <!--   <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li> -->
-          <!--   <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
+            <!--   <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li> -->
+            <!--   <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
           </ul>
         </li>
 <!--         <li class="treeview">
@@ -99,30 +103,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Cabang
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url()."index.php/forms/databaru";?>"><i class="fa fa-circle-o"></i> Tambah</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Update</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Hapus</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Karyawan
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url()."index.php/forms/databaru";?>"><i class="fa fa-circle-o"></i> Tambah</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Update</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Hapus</a></li>
-              </ul>
-            </li>
+            <li><a href="<?php echo base_url()."index.php/forms/databaru";?>"><i class="fa fa-circle-o"></i> Cabang</a></li>
+            <li><a href="<?php echo base_url()."index.php/forms/databaru";?>"><i class="fa fa-circle-o"></i> Karyawan</a></li>
+            <li><a href="<?php echo base_url()."index.php/admin/register";?>"><i class="fa fa-circle-o"></i> Admin</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -147,6 +130,8 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url()."index.php/tables/penjualan";?>"><i class="fa fa-circle-o"></i> Penjualan</a></li>
             <li><a href="<?php echo base_url()."index.php/tables/tagihan";?>"><i class="fa fa-circle-o"></i> Tagihan</a></li>
+            <li><a href="<?php echo base_url()."index.php/tables/cabang";?>"><i class="fa fa-circle-o"></i> Cabang</a></li>
+            <li><a href="<?php echo base_url()."index.php/tables/karyawan";?>"><i class="fa fa-circle-o"></i> Karyawan</a></li>
           </ul>
         </li>
         <li>

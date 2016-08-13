@@ -4,8 +4,8 @@ class Migration_Install_ion_auth extends CI_Migration {
 
 	public function up()
 	{
-		// Drop table 'groups' if it exists		
-		$this->dbforge->drop_table('groups');
+		// Drop table 'groups' if it exists
+		$this->dbforge->drop_table('groups', TRUE);
 
 		// Table structure for table 'groups'
 		$this->dbforge->add_field(array(
@@ -44,7 +44,7 @@ class Migration_Install_ion_auth extends CI_Migration {
 
 
 		// Drop table 'users' if it exists
-		$this->dbforge->drop_table('users');
+		$this->dbforge->drop_table('users', TRUE);
 
 		// Table structure for table 'users'
 		$this->dbforge->add_field(array(
@@ -55,7 +55,7 @@ class Migration_Install_ion_auth extends CI_Migration {
 				'auto_increment' => TRUE
 			),
 			'ip_address' => array(
-				'type' => 'VARBINARY',
+				'type' => 'VARCHAR',
 				'constraint' => '16'
 			),
 			'username' => array(
@@ -140,10 +140,10 @@ class Migration_Install_ion_auth extends CI_Migration {
 		// Dumping data for table 'users'
 		$data = array(
 			'id' => '1',
-			'ip_address' => 0x7f000001,
+			'ip_address' => '127.0.0.1',
 			'username' => 'administrator',
-			'password' => '59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4',
-			'salt' => '9462e8eee0',
+			'password' => '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36',
+			'salt' => '',
 			'email' => 'admin@admin.com',
 			'activation_code' => '',
 			'forgotten_password_code' => NULL,
@@ -158,8 +158,8 @@ class Migration_Install_ion_auth extends CI_Migration {
 		$this->db->insert('users', $data);
 
 
-		// Drop table 'users_groups' if it exists		
-		$this->dbforge->drop_table('users_groups');
+		// Drop table 'users_groups' if it exists
+		$this->dbforge->drop_table('users_groups', TRUE);
 
 		// Table structure for table 'users_groups'
 		$this->dbforge->add_field(array(
@@ -197,10 +197,10 @@ class Migration_Install_ion_auth extends CI_Migration {
 			)
 		);
 		$this->db->insert_batch('users_groups', $data);
-		
+
 
 		// Drop table 'login_attempts' if it exists
-		$this->dbforge->drop_table('login_attempts');
+		$this->dbforge->drop_table('login_attempts', TRUE);
 
 		// Table structure for table 'login_attempts'
 		$this->dbforge->add_field(array(
@@ -211,13 +211,13 @@ class Migration_Install_ion_auth extends CI_Migration {
 				'auto_increment' => TRUE
 			),
 			'ip_address' => array(
-				'type' => 'VARBINARY',
+				'type' => 'VARCHAR',
 				'constraint' => '16'
 			),
 			'login' => array(
 				'type' => 'VARCHAR',
 				'constraint' => '100',
-				'null', TRUE
+				'null' => TRUE
 			),
 			'time' => array(
 				'type' => 'INT',
@@ -233,9 +233,9 @@ class Migration_Install_ion_auth extends CI_Migration {
 
 	public function down()
 	{
-		$this->dbforge->drop_table('users');
-		$this->dbforge->drop_table('groups');
-		$this->dbforge->drop_table('users_groups');
-		$this->dbforge->drop_table('login_attempts');
+		$this->dbforge->drop_table('users', TRUE);
+		$this->dbforge->drop_table('groups', TRUE);
+		$this->dbforge->drop_table('users_groups', TRUE);
+		$this->dbforge->drop_table('login_attempts', TRUE);
 	}
 }

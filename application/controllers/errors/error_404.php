@@ -20,6 +20,9 @@ class error_404 extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('errors/error_404');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('errors/error_404');	
+		}
+		else redirect('admin/login');
 	}
 }

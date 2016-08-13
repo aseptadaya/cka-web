@@ -26,25 +26,25 @@
   <![endif]-->
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <span class="logo-lg"><b>CIPTA</b>KaryaAbadi</span>
-    <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <!-- <p class="login-box-msg">Sign in to start your session</p> -->
+  <div class="login-box">
+    <div class="login-logo">
+      <span class="logo-lg"><b>CIPTA</b>KaryaAbadi</span>
+      <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+      <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 
-    <form action="<?php echo base_url()."index.php/admin/login/process"?>" method="POST">
-      <div class="form-group has-feedback">
-        <input name="username" type="text" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input name="password" type="password" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
+      <form action="<?php echo base_url()."index.php/admin/login/process"?>" method="POST">
+        <div class="form-group has-feedback">
+          <input name="email" type="email" class="form-control" placeholder="Email">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input name="password" type="password" class="form-control" placeholder="Password">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
         <!-- <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
@@ -67,25 +67,25 @@
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
         Google+</a>
-    </div> -->
-    <!-- /.social-auth-links -->
+      </div> -->
+      <!-- /.social-auth-links -->
 
 <!--     <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a> -->
+  <a href="register.html" class="text-center">Register a new membership</a> -->
 
-  </div>
-  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
 
 <!-- <?php $this->load->view('component/add-ons');?> -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?php echo base_url();?>plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo base_url();?>plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {
     $('input').iCheck({

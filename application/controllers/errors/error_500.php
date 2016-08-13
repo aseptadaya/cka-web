@@ -20,6 +20,9 @@ class error_500 extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('errors/error_500');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('errors/error_500');	
+		}
+		else redirect('admin/login');
 	}
 }

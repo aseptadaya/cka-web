@@ -16,7 +16,7 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-        <!-- Messages: style can be found in dropdown.less-->
+          <!-- Messages: style can be found in dropdown.less-->
           <!--li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -27,7 +27,7 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <!--ul class="menu">
-                  <li><!-- start message -->
+                <li><!-- start message -->
                     <!--a href="#">
                       <div class="pull-left">
                         <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -93,7 +93,7 @@
               <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
           </li-->
-        <!-- Notifications: style can be found in dropdown.less -->
+          <!-- Notifications: style can be found in dropdown.less -->
           <!--li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -135,7 +135,7 @@
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
-        <!-- Tasks: style can be found in dropdown.less -->
+          <!-- Tasks: style can be found in dropdown.less -->
           <!--li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
@@ -146,7 +146,7 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <!--ul class="menu">
-                  <li><!-- Task item -->
+                <li><!-- Task item -->
                     <!--a href="#">
                       <h3>
                         Design some buttons
@@ -209,25 +209,31 @@
               </li>
             </ul>
           </li>
-        <!-- User Account: style can be found in dropdown.less -->
+          <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url();?>dist/img/avatar9.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Aditya Septadaya</span>
+              <?php
+              $user=$this->ion_auth->user()->row()->username;
+              echo "<span> Welcome, ".$user."</span>";
+              ?>
+              
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-body">
                 <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
-                <p>
-                  Aditya Septadaya - Web Developer
-                  <!-- <small>Member since Nov. 2012</small> -->
-                </p>
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <form method="get" action="#">
+                    <button type="submit" class="btn btn-block btn-info">Profile</button>
+                  </form>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <form method="get" action="<?php echo base_url()."index.php/admin/logout"?>">
+                    <button type="submit" class="btn btn-block btn-danger">Log out</button>
+                  </form>
+
+                  <!-- <a href="<?php //echo base_url()."index.php/admin/logout";?>" class="btn btn-block btn-danger">Log out</a> -->
                 </div>
               </li>
               <!-- Menu Body -->
@@ -248,14 +254,14 @@
               <!-- Menu Footer-->
               <!--li class="user-body">
                 
-              </li-->
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
+            </li-->
+          </ul>
+        </li>
+        <!-- Control Sidebar Toggle Button -->
+        <li>
+          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+        </li>
+      </ul>
+    </div>
 
-    </nav>
+  </nav>

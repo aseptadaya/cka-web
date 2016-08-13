@@ -20,6 +20,9 @@ class Tagihan extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('tables/tagihan');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('tables/tagihan');	
+		}
+		else redirect('admin/login');
 	}
 }

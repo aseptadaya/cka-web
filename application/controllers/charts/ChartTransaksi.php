@@ -20,6 +20,9 @@ class ChartTransaksi extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('charts/chartTransaksi');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('charts/chartTransaksi');	
+		}
+		else redirect('admin/login');
 	}
 }

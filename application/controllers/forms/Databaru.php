@@ -20,36 +20,42 @@ class Databaru extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('forms/databaru');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('forms/databaru');	
+		}
+		else redirect('admin/login');
 	}
-	public function insertKaryawan(){
-		$cabang = $this->cka_model->findData('cabang','id_cabang','cabang',$_POST['cabang_karyawan']);
+	public function insertCabang(){
+		$res = $this->cka_model->insertData('cabang',$_POST);
+		if($res >= 1){
+			redirect ('forms/databaru');}
+			else redirect('main');
+		}
+		public function insertKaryawan(){
+			$admin=$this->ion_auth->user()->row()->username;
+			$cabang_admin=$this->ion_auth->user()->row()->company;
+			$cabang = $this->cka_model->findData('cabang','id_cabang','cabang',$_POST['cabang_karyawan']);
 
-		$res = $this->cka_model->insertData('karyawan',array(
+			$res = $this->cka_model->insertData('karyawan',array(
 				"nama_karyawan" => $_POST['nama_karyawan'],
+				"kode_karyawan" => $_POST['kode_karyawan'],
 				"id_cabang" => $cabang[0]['id_cabang'],
 				"tim_karyawan" => $_POST['tim_karyawan'],
 				"alamat_karyawan" => $_POST['alamat_karyawan'],
 				"telepon_karyawan" => $_POST['telepon_karyawan'],
 				"divisi" => $_POST['divisi'],
-				"sub_tim" => $_POST['sub_tim']
+				// input admin data
+				"input_admin_username" => $admin,
+				"input_admin_cabang" => $cabang_admin
 				)
-		);
-		if($res >= 1){
-		 	redirect ('forms/databaru');}
-		else redirect('main');
+			);
+			if($res >= 1){
+				redirect ('forms/databaru');}
+				else redirect('main');
 
-		// echo "<pre>";
-		// print_r($cabang);
-		// echo "</pre>";
-	}
-	public function insertCabang(){
-		// echo "<pre>";
-		// print_r($_POST);
-		// echo "</pre>";
-		$res = $this->cka_model->insertData('cabang',$_POST);
-	 	if($res >= 1){
-		 	redirect ('forms/databaru');}
-		else redirect('main');
-	}
-}
+				// echo "<pre>";
+				// print_r($_POST);
+				// echo "</pre>";
+			}
+
+		}

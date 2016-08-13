@@ -20,6 +20,9 @@ class Calendar extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('calendar');
+		if($this->ion_auth->logged_in()){
+			$this->load->view('calendar');	
+		}
+		else redirect('admin/login');
 	}
 }
