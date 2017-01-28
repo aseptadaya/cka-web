@@ -63,21 +63,21 @@
             </span>
           </a>
         </li> -->
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-line-chart"></i>
-            <span>Charts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url()."index.php/charts/charttransaksi";?>"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="<?php echo base_url()."index.php/charts/charttransaksi";?>"><i class="fa fa-circle-o"></i> Flot</a></li>
+        <!-- <li class="treeview"> -->
+          <!-- <a href="#"> -->
+            <!-- <i class="fa fa-line-chart"></i> -->
+            <!-- <span>Charts</span> -->
+            <!-- <span class="pull-right-container"> -->
+              <!-- <i class="fa fa-angle-left pull-right"></i> -->
+            <!-- </span> -->
+          <!-- </a> -->
+          <!-- <ul class="treeview-menu"> -->
+            <!-- <li><a href="<?php //echo base_url()."index.php/charts/charttransaksi";?>"><i class="fa fa-circle-o"></i> ChartJS</a></li> -->
+            <!-- <li><a href="<?php //echo base_url()."index.php/charts/charttransaksi";?>"><i class="fa fa-circle-o"></i> Flot</a></li> -->
             <!--   <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li> -->
             <!--   <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
-          </ul>
-        </li>
+          <!-- </ul> -->
+        <!-- </li> -->
 <!--         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
@@ -97,7 +97,7 @@
         </li> -->
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms Data Baru</span>
+            <i class="fa fa-edit"></i> <span>Form Data Baru</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -110,7 +110,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms Transaksi</span>
+            <i class="fa fa-edit"></i> <span>Form Transaksi</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -130,19 +130,19 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url()."index.php/tables/penjualan";?>"><i class="fa fa-circle-o"></i> Penjualan</a></li>
             <li><a href="<?php echo base_url()."index.php/tables/tagihan";?>"><i class="fa fa-circle-o"></i> Tagihan</a></li>
-            <li><a href="<?php echo base_url()."index.php/tables/cabang";?>"><i class="fa fa-circle-o"></i> Cabang</a></li>
-            <li><a href="<?php echo base_url()."index.php/tables/karyawan";?>"><i class="fa fa-circle-o"></i> Karyawan</a></li>
+            <!-- <li><a href="<?php echo base_url()."index.php/tables/cabang";?>"><i class="fa fa-circle-o"></i> Cabang</a></li> -->
+            <!-- <li><a href="<?php echo base_url()."index.php/tables/karyawan";?>"><i class="fa fa-circle-o"></i> Karyawan</a></li> -->
           </ul>
         </li>
-        <li>
-          <a href="<?php echo base_url()."index.php/calendar";?>">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
+        <!-- <li> -->
+          <!-- <a href="<?php echo base_url()."index.php/calendar";?>"> -->
+            <!-- <i class="fa fa-calendar"></i> <span>Calendar</span> -->
+            <!-- <span class="pull-right-container"> -->
               <!-- <small class="label pull-right bg-red">3</small>
               <small class="label pull-right bg-blue">17</small> -->
-            </span>
-          </a>
-        </li>
+            <!-- </span> -->
+          <!-- </a> -->
+        <!-- </li> -->
 <!--         <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
