@@ -32,172 +32,210 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-          <!-- left column -->
-          <div class="col-md-6">
-            <!-- general form elements -->
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">Form Cabang Baru</h3>
-              </div>
-              <!-- /.box-header -->
-              <!-- form start -->
-              <form method="POST" action="<?php echo base_url()."index.php/forms/databaru/insertCabang"?>" name="form-cabang-baru" role="form-cabang-baru">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label>Nama Cabang</label>
-                    <input name="cabang" class="form-control" id="NamaCabang" placeholder="Masukan Kota Cabang" required data-validation-required-message="Mohon masukan nama cabang">
-                  </div>
-                  <div class="form-group">
-                    <label>Nama Pimpinan Cabang</label>
-                    <input name="pim_cabang" class="form-control" id="NamaCabang" placeholder="Masukan Kota Cabang" required data-validation-required-message="Mohon masukan nama pimpinan cabang">
-                  </div>
-                  <div class="form-group">
-                    <label>Alamat Cabang</label>
-                    <textarea name="alamat_cabang" class="form-control" rows="5" placeholder="Masukan Alamat Cabang" required data-validation-required-message="Mohon masukan alamat cabang"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Telepon Cabang</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-phone"></i>
-                      </div>
-                      <input name="telepon_cabang" type="tel" class="form-control">
-                    </div>
-                    <!-- /.input group -->
-                  </div>
-                </div>
-                <!-- /.box-body -->
+          <div class="col-md-12">
 
-                <div class="box-footer">
-                  <button type="reset" class="btn btn-default pull-left">Reset</button>
-                  <button type="submit" class="btn btn-primary pull-right">Submit</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.box -->
-          </div>
-          <!--/.col (left) -->
+            <ul id="tab-wrapper" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#karyawan-baru" aria-controls="profile" role="tab" data-toggle="tab">Karyawan Baru</a></li>
+                <li role="presentation"><a href="#cabang-baru" aria-controls="home" role="tab" data-toggle="tab">Cabang Baru</a></li>
+                <li role="presentation"><a href="#produk-baru" aria-controls="home" role="tab" data-toggle="tab">Produk Baru</a></li>
+            </ul>
 
-          <!-- right column -->
-          <div class="col-md-6">
-            <!-- Horizontal Form -->
-            <div class="box box-info">
-              <div class="box-header with-border">
-                <h3 class="box-title">Form Karyawan Baru</h3>
-              </div>
-              <!-- /.box-header -->
-              <!-- form start -->
-              <form method="POST" action="<?php echo base_url()."index.php/forms/databaru/insertKaryawan"?>" name="form-data-baru" role="form-data-baru">
-                <div class="box-body">
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-md-8">
-                        <label>Nama Karyawan</label>
-                        <input name="nama_karyawan" type="text" class="form-control" id="inputName" placeholder="Nama Lengkap Karyawan" required data-validation-required-message="Mohon masukan nama karyawan">
-                      </div>
-                      <div class="col-md-4">
-                        <label>Kode Karyawan</label>
-                        <input name="kode_karyawan" type="text" class="form-control" id="inputName" placeholder="Kode Karyawan" required data-validation-required-message="Mohon masukan Kode Karyawan">
-                      </div>
-                    </div>
-
+            <div class="tab-content">
+                
+                <div role="tabpanel" class="tab-pane active" id="karyawan-baru">
+                <!-- Horizontal Form -->
+                <div class="box box-info">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Form Karyawan Baru</h3>
                   </div>
-
-                  <div class="form-group">
-                    <label>Cabang Karyawan</label>
-                    <select name="cabang_karyawan" class="form-control select2" style="width: 100%;">
-                      <?php $this->load->view('component/list_cabang');?>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label>Alamat Karyawan</label>
-                    <textarea name="alamat_karyawan" class="form-control" rows="3" placeholder="Masukan Alamat Karyawan"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Telepon Karyawan</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-phone"></i>
-                      </div>
-                      <input name="telepon_karyawan" type="text" class="form-control">
-                    </div>
-                    <!-- /.input group -->
-                  </div>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-lg-3">
-                        <div class="form-group">
-                          <label>Tim</label>
-                          <input name="tim_karyawan" type="text" class="form-control" id="inputName" placeholder="Tim" >
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form method="POST" action="<?php echo base_url()."index.php/forms/databaru/insertKaryawan"?>" name="form-data-baru" role="form-data-baru">
+                    <div class="box-body">
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <label>Nama Karyawan</label>
+                            <input name="nama_karyawan" type="text" class="form-control" id="inputName" placeholder="Nama Lengkap Karyawan" required data-validation-required-message="Mohon masukan nama karyawan">
+                          </div>
+                          <div class="col-md-4">
+                            <label>Kode Karyawan</label>
+                            <input name="kode_karyawan" type="text" class="form-control" id="inputName" placeholder="Kode Karyawan" required data-validation-required-message="Mohon masukan Kode Karyawan">
+                          </div>
                         </div>
 
                       </div>
-                      <div class="col-lg-9">
-                        <label>Divisi</label>
-                        <table>
-                          <tr>
-                            <td>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="divisi" id="radDiv" value="Sales" class="minimal" checked>
-                                  <small>  Sales</small>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="divisi" id="radDiv" value="Penagihan" class="minimal">
-                                  <small>  Penagihan</small>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="divisi" id="radDiv" value="Pimpinan" class="minimal">
-                                  <small>  Pimpinan</small>
-                                </label>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="divisi" id="radDiv" value="Admin" class="minimal">
-                                  <small>  Admin</small>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="divisi" id="radDiv" value="Penggantian" class="minimal">
-                                  <small>  Penggantian</small>
-                                </label>
-                              </div>
-                            </td>
-                          </tr>
-                        </table>
-                        <!-- /input-group -->  
+
+                      <div class="form-group">
+                        <label>Cabang Karyawan</label>
+                        <select name="cabang_karyawan" class="form-control select2" style="width: 100%;">
+                          <?php $this->load->view('component/list_cabang');?>
+                        </select>
                       </div>
-                      <!-- /.col-lg-6 -->
+                      <div class="form-group">
+                        <label>Alamat Karyawan</label>
+                        <textarea name="alamat_karyawan" class="form-control" rows="3" placeholder="Masukan Alamat Karyawan"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Telepon Karyawan</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                          </div>
+                          <input name="telepon_karyawan" type="text" class="form-control">
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <div class="form-group">
+                              <label>Tim</label>
+                              <input name="tim_karyawan" type="text" class="form-control" id="inputName" placeholder="Tim" >
+                            </div>
+
+                          </div>
+                          <div class="col-lg-9">
+                            <label>Divisi</label>
+                            <table>
+                              <tr>
+                                <td>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="divisi" id="radDiv" value="Sales" class="minimal" checked>
+                                      <small>  Sales</small>
+                                    </label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="divisi" id="radDiv" value="Penagihan" class="minimal">
+                                      <small>  Penagihan</small>
+                                    </label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="divisi" id="radDiv" value="Pimpinan" class="minimal">
+                                      <small>  Pimpinan</small>
+                                    </label>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="divisi" id="radDiv" value="Admin" class="minimal">
+                                      <small>  Admin</small>
+                                    </label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="divisi" id="radDiv" value="Penggantian" class="minimal">
+                                      <small>  Penggantian</small>
+                                    </label>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- /input-group -->  
+                          </div>
+                          <!-- /.col-lg-6 -->
+                        </div>
+
+                        <!-- /.row -->
+                      </div>
+
                     </div>
-
-                    <!-- /.row -->
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                      <button type="reset" class="btn btn-default pull-left">Reset</button>
+                      <button type="submit" class="btn btn-info pull-right">Submit</button>
+                    </div>
+                    <!-- /.box-footer -->
+                  </form>
+                </div>
+                <!-- /.box -->
+              </div>
+                <div role="tabpanel" class="tab-pane" id="cabang-baru">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Form Cabang Baru</h3>
                   </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form method="POST" action="<?php echo base_url()."index.php/forms/databaru/insertCabang"?>" name="form-cabang-baru" role="form-cabang-baru">
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label>Nama Cabang</label>
+                        <input name="cabang" class="form-control" id="NamaCabang" placeholder="Masukan Kota Cabang" required data-validation-required-message="Mohon masukan nama cabang">
+                      </div>
+                      <div class="form-group">
+                        <label>Nama Pimpinan Cabang</label>
+                        <input name="pim_cabang" class="form-control" id="NamaCabang" placeholder="Masukan Kota Cabang" required data-validation-required-message="Mohon masukan nama pimpinan cabang">
+                      </div>
+                      <div class="form-group">
+                        <label>Alamat Cabang</label>
+                        <textarea name="alamat_cabang" class="form-control" rows="5" placeholder="Masukan Alamat Cabang" required data-validation-required-message="Mohon masukan alamat cabang"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Telepon Cabang</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                          </div>
+                          <input name="telepon_cabang" type="tel" class="form-control">
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
 
+                    <div class="box-footer">
+                      <button type="reset" class="btn btn-default pull-left">Reset</button>
+                      <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                    </div>
+                  </form>
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                  <button type="reset" class="btn btn-default pull-left">Reset</button>
-                  <button type="submit" class="btn btn-info pull-right">Submit</button>
+                <!-- /.box -->
+              </div>
+                <div role="tabpanel" class="tab-pane" id="produk-baru">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Form Produk Baru</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form method="POST" action="<?php echo base_url()."index.php/forms/databaru/insertProduk"?>" name="form-produk-baru" role="form-produk-baru">
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label>Nama Produk</label>
+                        <input name="nama_produk" class="form-control" id="NamaProduk" placeholder="Masukan Nama Produk" required data-validation-required-message="Mohon masukan nama produk">
+                      </div>
+                      <div class="form-group">
+                        <label>Kode Produk</label>
+                        <input name="kode_produk" class="form-control" id="KodeProduk" placeholder="Masukan Kode Produk" required data-validation-required-message="Mohon masukan nama kode produk">
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                      <button type="reset" class="btn btn-default pull-left">Reset</button>
+                      <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                    </div>
+                  </form>
                 </div>
-                <!-- /.box-footer -->
-              </form>
+                <!-- /.box -->
+              </div>
+              
             </div>
-            <!-- /.box -->
           </div>
           <!--/.col (right) -->
         </div>
@@ -205,6 +243,15 @@
       </section>
       <!-- /.content -->
     </div>
+
+    <script type="text/javascript">
+    $(function(){
+      $("#tab-wrapper a").click(function(e){
+        e.preventDefault();
+        $(this).tab("show");
+      })
+    });
+    </script>
 
     <!-- /.content-wrapper -->
     <footer class="main-footer">

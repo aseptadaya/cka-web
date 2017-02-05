@@ -21,16 +21,19 @@ class Penjualan extends CI_Controller {
 	public function index()
 	{
 		if($this->ion_auth->logged_in()){
-			$this->load->view('tables/penjualan');	
+
+			$penjualan = $this->db
+							->join("cabang", "penjualan.id_cabang = cabang.id_cabang")
+							->join("karyawan", "penjualan.id_karyawan = karyawan.id_karyawan")
+							->get("penjualan")
+							->result();
+
+			$data = array(
+				"penjualan" => $penjualan,
+			);
+
+			$this->load->view('tables/penjualan', $data);
 		}
 		else redirect('admin/login');
-		// $penjualan = $this->cka_model->getDataObj('penjualan');
-		// $data['list_penjualan'] = $penjualan;
-		// echo "<pre>";
-		// print_r ($data);
-		// echo "</pre>";
-		// $cabang = $this->cka_model->findData('cabang','id_cabang','cabang',"Surabaya");
-		// echo $cabang;
-		// $this->load->view('tables/penjualan2',$data);
 	}
 }

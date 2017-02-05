@@ -21,7 +21,13 @@ class Tagihan extends CI_Controller {
 	public function index()
 	{
 		if($this->ion_auth->logged_in()){
-			$this->load->view('tables/tagihan');	
+            $tagihan = $this->db
+                            ->join("cabang","tagihan.id_cabang = cabang.id_cabang")
+                            ->join("karyawan","tagihan.id_karyawan = karyawan.id_karyawan")
+                            ->get("tagihan")
+                            ->result();
+            $data = array("tagihan" => $tagihan,);
+			$this->load->view('tables/tagihan', $data);
 		}
 		else redirect('admin/login');
 	}

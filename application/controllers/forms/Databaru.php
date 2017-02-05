@@ -31,6 +31,12 @@ class Databaru extends CI_Controller {
 			redirect ('forms/databaru');}
 			else redirect('main');
 		}
+    public function insertProduk(){
+        $res = $this->cka_model->insertData('produk',$_POST);
+        if($res >= 1){
+			redirect ('forms/databaru');}
+			else redirect('main');
+		}
 		public function insertKaryawan(){
 			$admin=$this->ion_auth->user()->row()->username;
 			$cabang_admin=$this->ion_auth->user()->row()->company;

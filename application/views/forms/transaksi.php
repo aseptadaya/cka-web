@@ -31,17 +31,26 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-          <!-- column Penjualan -->
-          <div class="col-md-6">
-            <!-- general form elements -->
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">Laporan Penjualan </h3>
-              </div>
+            <div class="col-md-12">
+                
+                <ul id="tab-wrapper" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#penjualan-baru" aria-controls="home" role="tab" data-toggle="tab">Penjualan Baru</a></li>
+                    <li role="presentation"><a href="#tagihan-baru" aria-controls="home" role="tab" data-toggle="tab">Tagihan Baru</a></li>
+                </ul>
+            
+            
+            <div class="tab-content">
+                
+                <div role="tabpanel" class="tab-pane active" id="penjualan-baru">
+                    <!-- column Penjualan -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Laporan Penjualan </h3>
+                    </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <form method="POST" action="<?php echo base_url()."index.php/forms/transaksi/processPenjualan"?>" name="form-transaksi-baru" role="form-transaksi-baru">
-                <div class="box-body">
+                    <form method="POST" action="<?php echo base_url()."index.php/forms/transaksi/processPenjualan"?>" name="form-transaksi-baru" role="form-transaksi-baru">
+                    <div class="box-body">
 
 
                   <label>Cabang Karyawan</label>
@@ -58,15 +67,10 @@
                     <select name="karyawan" id="karyawan" required data-validation-required-message="Pilih karyawan" class="form-control select2" style="width: 100%;">
                       <?php $this->load->view('component/list_karyawan');?>
                     </select>
-                    <span class="help-block"><small>sesuaikan ID karyawan dengan nama karyawan</small></span>
+                    <span class="help-block"><small>sesuaikan Kode karyawan dengan nama karyawan</small></span>
                   </div>
 
 
-
-
-
-
-                  
                   <div class="row">
                     <div class="col-lg-8">
                       <label>Tanggal <span><small>(mm-dd-yyyy)</small></label>
@@ -144,10 +148,7 @@
 
 
           </div>
-          <!--/.col (right) -->
-
-          <!-- column Tagihan-->
-          <div class="col-md-6">
+                <div role="tabpanel" class="tab-pane active" id="tagihan-baru">
             <!-- general form elements -->
             <div class="box box-primary">
               <div class="box-header with-border">
@@ -283,12 +284,24 @@
 
                       </div>
 
-                    </div>
-                    <!-- /.row -->
-                  </section>
+            </div>
+            </div>
+        </div>
+            <!-- /.row -->
+        </section>
                   <!-- /.content -->
                 </div>
                 <!-- /.content-wrapper -->
+        
+        <script type="text/javascript">
+        $(function(){
+        $("#tab-wrapper a").click(function(e){
+            e.preventDefault();
+            $(this).tab("show");
+            })
+        });
+        </script>
+        
                 <footer class="main-footer">
                   <?php $this->load->view('component/footer');?>
                 </footer>

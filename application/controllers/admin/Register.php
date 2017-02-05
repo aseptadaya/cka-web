@@ -54,7 +54,7 @@ class Register extends CI_Controller {
 			// print_r ($additional_data); 
 			// echo "</pre>"; 
 			$this->ion_auth->register($username, $password, $email, $additional_data, array('1'));
-			redirect('admin/register');
+			redirect('main');
 		}
 	}
 }

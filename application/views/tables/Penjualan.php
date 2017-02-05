@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php $this->load->view('component/head');?>
+  <?php $this->load->view('component/head'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
-    <?php $this->load->view('component/main-header');?>
+    <?php $this->load->view('component/main-header'); ?>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-    <?php $this->load->view('component/main-sidebar');?>
+    <?php $this->load->view('component/main-sidebar'); ?>
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
@@ -41,68 +41,35 @@
             <div class="box-body table-responsive no-padding">
               <table id="table-penjualan" class="table table-bordered table-striped table-hover">
                 <thead>
-                <tr>
-                  <th rowspan="2" align="center"><small>Cabang</small></th>
-                  <th rowspan="2" align="center"><small>Tim</small></th>
-                  <th rowspan="2" align="center"><small>Sub</small></th>
-                  <th rowspan="2" align="center"><small>Nama</small></th>
-                  <th rowspan="2" align="center"><small>Demo</small></th>
-                  <th colspan="3" align="center"><small>Unit</small></th>
-                  <th colspan="3" align="center"><small>Rupiah</small></th>
-                  <!-- <th><small>Unit Tunai</small></th> -->
-                  <!-- <th><small>Unit Angsuran</small></th> -->
-                  <!-- <th><small>Unit Total</small></th> -->
-                  <!-- <th><small>Rupiah Tunai</small></th> -->
-                  <!-- <th><small>Rupiah Angsuran</small></th> -->
-                  <!-- <th><small>Rupiah Total</small></th> -->
-                </tr>
-                <tr>
-                  <th><small>Tunai</small></th>
-                  <th><small>Angsuran</small></th>
-                  <th><small>Total</small></th>
-                  <th><small>Tunai</small></th>
-                  <th><small>Angsuran</small></th>
-                  <th><small>Total</small></th>
-                </tr>
+                  <tr>
+                    <th align="center"><small>Cabang</small></th>
+                    <th align="center"><small>Karyawan</small></th>
+                    <th align="center"><small>Demo</small></th>
+                    <th align="center"><small>Tunai Unit</small></th>
+                    <th align="center"><small>Angsuran Unit</small></th>
+                    <th align="center"><small>Unit</small></th>
+                    <th align="center"><small>Tunai Rupiah</small></th>
+                    <th align="center"><small>Angsuran Rupiah</small></th>
+                    <th align="center"><small>Total Rupiah</small></th>
+                  </tr>
                 </thead>
                 <tbody>
-                <?php foreach($data as $penjualan){?>
-                <tr>
-                  <td><?php echo $penjualan['id_cabang'];?></td>
-                  <td><?php echo $penjualan['id_karyawan'];?>
-                  </td>
-                  <td><?php echo $penjualan['id_karyawan'];?>
-                  </td>
-                  <td><?php echo $penjualan['id_karyawan'];?>
-                  </td>
-                  <td><?php echo $penjualan['demo'];?>
-                  </td>
-                  <td><?php echo $penjualan['tunai_unit'];?>
-                  </td>
-                  <td><?php echo $penjualan['angsuran_unit'];?>
-                  </td>
-                  <td><?php echo $total_unit=$penjualan['tunai_unit']+$penjualan['angsuran_unit'];?>
-                  </td>
-                  <td><?php echo $penjualan['tunai_rupiah'];?>
-                  </td>
-                  <td><?php echo $penjualan['angsuran_rupiah'];?>
-                  </td>
-                  <td><?php echo $total_rupiah=$penjualan['tunai_unit']+$penjualan['angsuran_rupiah'];?>
-                  </td>
 
-                </tr>
-                <?php }?>
+                <?php foreach($penjualan as $penjualan_item): ?>
+                  <tr>
+                    <td><?php echo $penjualan_item->cabang; ?></td>
+                    <td><?php echo $penjualan_item->nama_karyawan; ?></td>
+                    <td><?php echo $penjualan_item->demo; ?></td>
+                    <td><?php echo $penjualan_item->tunai_unit; ?></td>
+                    <td><?php echo $penjualan_item->angsuran_unit; ?></td>
+                    <td><?php echo $total_unit=$penjualan_item->tunai_unit+$penjualan_item->angsuran_unit; ?></td>
+                    <td><?php echo $penjualan_item->tunai_rupiah; ?></td>
+                    <td><?php echo $penjualan_item->angsuran_rupiah; ?></td>
+                    <td><?php echo $total_rupiah=$penjualan_item->tunai_unit+$penjualan_item->angsuran_rupiah; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th><small>Rendering engine</small></th>
-                  <th><small>Browser</small></th>
-                  <th><small>Platform(s)</small></th>
-                  <th><small>Engine version</small></th>
-                  <th><small>CSS grade</small></th>
-                </tr>
-
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
@@ -117,11 +84,11 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <?php $this->load->view('component/footer');?>
+    <?php $this->load->view('component/footer'); ?>
   </footer>
 
   <!-- Control Sidebar -->
-    <?php $this->load->view('component/control-sidebar');?>
+    <?php $this->load->view('component/control-sidebar'); ?>
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
@@ -151,7 +118,7 @@
       "searching": false,
       "ordering": true,
       "info": true,
-      "autoWidth": false
+      "autoWidth": true
     });
   });
 </script>
